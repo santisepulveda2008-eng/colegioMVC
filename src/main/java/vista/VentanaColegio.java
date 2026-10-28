@@ -33,7 +33,6 @@ public class VentanaColegio extends javax.swing.JFrame {
         lblTitulo = new javax.swing.JLabel();
         tabs = new javax.swing.JTabbedPane();
         panelEstudiante = new javax.swing.JPanel();
-        panelCamposEstudiante = new javax.swing.JPanel();
         lblEstNombre = new javax.swing.JLabel();
         txtEstNombre = new javax.swing.JTextField();
         lblEstDireccion = new javax.swing.JLabel();
@@ -46,11 +45,9 @@ public class VentanaColegio extends javax.swing.JFrame {
         txtEstCodigo = new javax.swing.JTextField();
         lblEstGrado = new javax.swing.JLabel();
         txtEstGrado = new javax.swing.JTextField();
-        panelBotonesEstudiante = new javax.swing.JPanel();
         btnRegistrarEstudiante = new javax.swing.JButton();
         btnLimpiarEstudiante = new javax.swing.JButton();
         panelProfesor = new javax.swing.JPanel();
-        panelCamposProfesor = new javax.swing.JPanel();
         lblProfNombre = new javax.swing.JLabel();
         txtProfNombre = new javax.swing.JTextField();
         lblProfDireccion = new javax.swing.JLabel();
@@ -67,11 +64,9 @@ public class VentanaColegio extends javax.swing.JFrame {
         txtProfValorHora = new javax.swing.JTextField();
         lblProfHoras = new javax.swing.JLabel();
         txtProfHoras = new javax.swing.JTextField();
-        panelBotonesProfesor = new javax.swing.JPanel();
         btnRegistrarProfesor = new javax.swing.JButton();
         btnLimpiarProfesor = new javax.swing.JButton();
         panelReportes = new javax.swing.JPanel();
-        panelBotonesReporte = new javax.swing.JPanel();
         btnReporteEstudiantes = new javax.swing.JButton();
         btnReporteProfesores = new javax.swing.JButton();
         scrollReporte = new javax.swing.JScrollPane();
@@ -83,51 +78,18 @@ public class VentanaColegio extends javax.swing.JFrame {
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("Registro de estudiantes y profesores");
-        lblTitulo.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        getContentPane().add(lblTitulo, java.awt.BorderLayout.NORTH);
-
-        panelEstudiante.setBorder(javax.swing.BorderFactory.createEmptyBorder(12, 12, 12, 12));
-        panelEstudiante.setLayout(new java.awt.BorderLayout());
-
-        panelCamposEstudiante.setLayout(new java.awt.GridLayout(0, 2, 8, 6));
 
         lblEstNombre.setText("Nombre:");
-        panelCamposEstudiante.add(lblEstNombre);
-
-        txtEstNombre.setColumns(20);
-        panelCamposEstudiante.add(txtEstNombre);
 
         lblEstDireccion.setText("Dirección:");
-        panelCamposEstudiante.add(lblEstDireccion);
-
-        txtEstDireccion.setColumns(20);
-        panelCamposEstudiante.add(txtEstDireccion);
 
         lblEstTelefono.setText("Teléfono:");
-        panelCamposEstudiante.add(lblEstTelefono);
-
-        txtEstTelefono.setColumns(20);
-        panelCamposEstudiante.add(txtEstTelefono);
 
         lblEstFecha.setText("Fecha de nacimiento (dd/mm/aaaa):");
-        panelCamposEstudiante.add(lblEstFecha);
-
-        txtEstFecha.setColumns(20);
-        panelCamposEstudiante.add(txtEstFecha);
 
         lblEstCodigo.setText("Código:");
-        panelCamposEstudiante.add(lblEstCodigo);
-
-        txtEstCodigo.setColumns(20);
-        panelCamposEstudiante.add(txtEstCodigo);
 
         lblEstGrado.setText("Grado:");
-        panelCamposEstudiante.add(lblEstGrado);
-
-        txtEstGrado.setColumns(20);
-        panelCamposEstudiante.add(txtEstGrado);
-
-        panelEstudiante.add(panelCamposEstudiante, java.awt.BorderLayout.CENTER);
 
         btnRegistrarEstudiante.setText("Registrar estudiante");
         btnRegistrarEstudiante.addActionListener(new java.awt.event.ActionListener() {
@@ -135,7 +97,6 @@ public class VentanaColegio extends javax.swing.JFrame {
                 btnRegistrarEstudianteActionPerformed(evt);
             }
         });
-        panelBotonesEstudiante.add(btnRegistrarEstudiante);
 
         btnLimpiarEstudiante.setText("Limpiar");
         btnLimpiarEstudiante.addActionListener(new java.awt.event.ActionListener() {
@@ -143,66 +104,87 @@ public class VentanaColegio extends javax.swing.JFrame {
                 btnLimpiarEstudianteActionPerformed(evt);
             }
         });
-        panelBotonesEstudiante.add(btnLimpiarEstudiante);
 
-        panelEstudiante.add(panelBotonesEstudiante, java.awt.BorderLayout.SOUTH);
+        javax.swing.GroupLayout panelEstudianteLayout = new javax.swing.GroupLayout(panelEstudiante);
+        panelEstudiante.setLayout(panelEstudianteLayout);
+        panelEstudianteLayout.setHorizontalGroup(
+            panelEstudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelEstudianteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelEstudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelEstudianteLayout.createSequentialGroup()
+                        .addGroup(panelEstudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblEstNombre)
+                            .addComponent(lblEstDireccion)
+                            .addComponent(lblEstTelefono)
+                            .addComponent(lblEstFecha)
+                            .addComponent(lblEstCodigo)
+                            .addComponent(lblEstGrado))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(panelEstudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtEstNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .addComponent(txtEstDireccion, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .addComponent(txtEstTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .addComponent(txtEstFecha, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .addComponent(txtEstCodigo, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .addComponent(txtEstGrado, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)))
+                    .addGroup(panelEstudianteLayout.createSequentialGroup()
+                        .addComponent(btnRegistrarEstudiante)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnLimpiarEstudiante)))
+                .addContainerGap())
+        );
+        panelEstudianteLayout.setVerticalGroup(
+            panelEstudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelEstudianteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelEstudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEstNombre)
+                    .addComponent(txtEstNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelEstudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEstDireccion)
+                    .addComponent(txtEstDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelEstudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEstTelefono)
+                    .addComponent(txtEstTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelEstudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEstFecha)
+                    .addComponent(txtEstFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelEstudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEstCodigo)
+                    .addComponent(txtEstCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelEstudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEstGrado)
+                    .addComponent(txtEstGrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelEstudianteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRegistrarEstudiante)
+                    .addComponent(btnLimpiarEstudiante))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         tabs.addTab("Estudiante", panelEstudiante);
 
-        panelProfesor.setBorder(javax.swing.BorderFactory.createEmptyBorder(12, 12, 12, 12));
-        panelProfesor.setLayout(new java.awt.BorderLayout());
-
-        panelCamposProfesor.setLayout(new java.awt.GridLayout(0, 2, 8, 6));
-
         lblProfNombre.setText("Nombre:");
-        panelCamposProfesor.add(lblProfNombre);
-
-        txtProfNombre.setColumns(20);
-        panelCamposProfesor.add(txtProfNombre);
 
         lblProfDireccion.setText("Dirección:");
-        panelCamposProfesor.add(lblProfDireccion);
-
-        txtProfDireccion.setColumns(20);
-        panelCamposProfesor.add(txtProfDireccion);
 
         lblProfTelefono.setText("Teléfono:");
-        panelCamposProfesor.add(lblProfTelefono);
-
-        txtProfTelefono.setColumns(20);
-        panelCamposProfesor.add(txtProfTelefono);
 
         lblProfFecha.setText("Fecha de nacimiento (dd/mm/aaaa):");
-        panelCamposProfesor.add(lblProfFecha);
-
-        txtProfFecha.setColumns(20);
-        panelCamposProfesor.add(txtProfFecha);
 
         lblProfCedula.setText("Cédula:");
-        panelCamposProfesor.add(lblProfCedula);
-
-        txtProfCedula.setColumns(20);
-        panelCamposProfesor.add(txtProfCedula);
 
         lblProfArea.setText("Área:");
-        panelCamposProfesor.add(lblProfArea);
-
-        txtProfArea.setColumns(20);
-        panelCamposProfesor.add(txtProfArea);
 
         lblProfValorHora.setText("Valor por hora (sin puntos):");
-        panelCamposProfesor.add(lblProfValorHora);
-
-        txtProfValorHora.setColumns(20);
-        panelCamposProfesor.add(txtProfValorHora);
 
         lblProfHoras.setText("Horas dictadas:");
-        panelCamposProfesor.add(lblProfHoras);
-
-        txtProfHoras.setColumns(20);
-        panelCamposProfesor.add(txtProfHoras);
-
-        panelProfesor.add(panelCamposProfesor, java.awt.BorderLayout.CENTER);
 
         btnRegistrarProfesor.setText("Registrar profesor");
         btnRegistrarProfesor.addActionListener(new java.awt.event.ActionListener() {
@@ -210,7 +192,6 @@ public class VentanaColegio extends javax.swing.JFrame {
                 btnRegistrarProfesorActionPerformed(evt);
             }
         });
-        panelBotonesProfesor.add(btnRegistrarProfesor);
 
         btnLimpiarProfesor.setText("Limpiar");
         btnLimpiarProfesor.addActionListener(new java.awt.event.ActionListener() {
@@ -218,14 +199,83 @@ public class VentanaColegio extends javax.swing.JFrame {
                 btnLimpiarProfesorActionPerformed(evt);
             }
         });
-        panelBotonesProfesor.add(btnLimpiarProfesor);
 
-        panelProfesor.add(panelBotonesProfesor, java.awt.BorderLayout.SOUTH);
+        javax.swing.GroupLayout panelProfesorLayout = new javax.swing.GroupLayout(panelProfesor);
+        panelProfesor.setLayout(panelProfesorLayout);
+        panelProfesorLayout.setHorizontalGroup(
+            panelProfesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelProfesorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelProfesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelProfesorLayout.createSequentialGroup()
+                        .addGroup(panelProfesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblProfNombre)
+                            .addComponent(lblProfDireccion)
+                            .addComponent(lblProfTelefono)
+                            .addComponent(lblProfFecha)
+                            .addComponent(lblProfCedula)
+                            .addComponent(lblProfArea)
+                            .addComponent(lblProfValorHora)
+                            .addComponent(lblProfHoras))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(panelProfesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtProfNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .addComponent(txtProfDireccion, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .addComponent(txtProfTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .addComponent(txtProfFecha, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .addComponent(txtProfCedula, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .addComponent(txtProfArea, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .addComponent(txtProfValorHora, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .addComponent(txtProfHoras, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)))
+                    .addGroup(panelProfesorLayout.createSequentialGroup()
+                        .addComponent(btnRegistrarProfesor)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnLimpiarProfesor)))
+                .addContainerGap())
+        );
+        panelProfesorLayout.setVerticalGroup(
+            panelProfesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelProfesorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelProfesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblProfNombre)
+                    .addComponent(txtProfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelProfesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblProfDireccion)
+                    .addComponent(txtProfDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelProfesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblProfTelefono)
+                    .addComponent(txtProfTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelProfesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblProfFecha)
+                    .addComponent(txtProfFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelProfesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblProfCedula)
+                    .addComponent(txtProfCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelProfesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblProfArea)
+                    .addComponent(txtProfArea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelProfesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblProfValorHora)
+                    .addComponent(txtProfValorHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelProfesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblProfHoras)
+                    .addComponent(txtProfHoras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelProfesorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRegistrarProfesor)
+                    .addComponent(btnLimpiarProfesor))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         tabs.addTab("Profesor", panelProfesor);
-
-        panelReportes.setBorder(javax.swing.BorderFactory.createEmptyBorder(12, 12, 12, 12));
-        panelReportes.setLayout(new java.awt.BorderLayout());
 
         btnReporteEstudiantes.setText("Reporte de estudiantes");
         btnReporteEstudiantes.addActionListener(new java.awt.event.ActionListener() {
@@ -233,7 +283,6 @@ public class VentanaColegio extends javax.swing.JFrame {
                 btnReporteEstudiantesActionPerformed(evt);
             }
         });
-        panelBotonesReporte.add(btnReporteEstudiantes);
 
         btnReporteProfesores.setText("Reporte de profesores");
         btnReporteProfesores.addActionListener(new java.awt.event.ActionListener() {
@@ -241,21 +290,62 @@ public class VentanaColegio extends javax.swing.JFrame {
                 btnReporteProfesoresActionPerformed(evt);
             }
         });
-        panelBotonesReporte.add(btnReporteProfesores);
-
-        panelReportes.add(panelBotonesReporte, java.awt.BorderLayout.NORTH);
 
         txtReporte.setEditable(false);
-        txtReporte.setColumns(70);
+        txtReporte.setColumns(20);
         txtReporte.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
-        txtReporte.setRows(16);
+        txtReporte.setRows(5);
         scrollReporte.setViewportView(txtReporte);
 
-        panelReportes.add(scrollReporte, java.awt.BorderLayout.CENTER);
+        javax.swing.GroupLayout panelReportesLayout = new javax.swing.GroupLayout(panelReportes);
+        panelReportes.setLayout(panelReportesLayout);
+        panelReportesLayout.setHorizontalGroup(
+            panelReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelReportesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelReportesLayout.createSequentialGroup()
+                        .addComponent(btnReporteEstudiantes)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnReporteProfesores)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(scrollReporte, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        panelReportesLayout.setVerticalGroup(
+            panelReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelReportesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnReporteEstudiantes)
+                    .addComponent(btnReporteProfesores))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(scrollReporte, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         tabs.addTab("Reportes", panelReportes);
 
-        getContentPane().add(tabs, java.awt.BorderLayout.CENTER);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tabs, javax.swing.GroupLayout.DEFAULT_SIZE, 790, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblTitulo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tabs, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         pack();
         setLocationRelativeTo(null);
@@ -322,7 +412,6 @@ public class VentanaColegio extends javax.swing.JFrame {
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JTabbedPane tabs;
     private javax.swing.JPanel panelEstudiante;
-    private javax.swing.JPanel panelCamposEstudiante;
     private javax.swing.JLabel lblEstNombre;
     private javax.swing.JTextField txtEstNombre;
     private javax.swing.JLabel lblEstDireccion;
@@ -335,11 +424,9 @@ public class VentanaColegio extends javax.swing.JFrame {
     private javax.swing.JTextField txtEstCodigo;
     private javax.swing.JLabel lblEstGrado;
     private javax.swing.JTextField txtEstGrado;
-    private javax.swing.JPanel panelBotonesEstudiante;
     private javax.swing.JButton btnRegistrarEstudiante;
     private javax.swing.JButton btnLimpiarEstudiante;
     private javax.swing.JPanel panelProfesor;
-    private javax.swing.JPanel panelCamposProfesor;
     private javax.swing.JLabel lblProfNombre;
     private javax.swing.JTextField txtProfNombre;
     private javax.swing.JLabel lblProfDireccion;
@@ -356,11 +443,9 @@ public class VentanaColegio extends javax.swing.JFrame {
     private javax.swing.JTextField txtProfValorHora;
     private javax.swing.JLabel lblProfHoras;
     private javax.swing.JTextField txtProfHoras;
-    private javax.swing.JPanel panelBotonesProfesor;
     private javax.swing.JButton btnRegistrarProfesor;
     private javax.swing.JButton btnLimpiarProfesor;
     private javax.swing.JPanel panelReportes;
-    private javax.swing.JPanel panelBotonesReporte;
     private javax.swing.JButton btnReporteEstudiantes;
     private javax.swing.JButton btnReporteProfesores;
     private javax.swing.JScrollPane scrollReporte;
