@@ -69,6 +69,17 @@ public class ColegioTest {
         assertTrue(colegio.generarReporteProfesores().contains("no hay profesores"));
     }
 
+    @Test
+    public void testReporteDeEstudiantesMuestraSusDatos() {
+        colegio.registrarEstudiante(crearEstudiante("E07"));
+
+        String reporte = colegio.generarReporteEstudiantes();
+
+        assertTrue(reporte.contains("Juan Torres"));
+        assertTrue(reporte.contains("E07"));
+        assertTrue(reporte.contains("7B"));
+    }
+
     private Profesor crearProfesor(String nombre, String cedula, double valorHora, int horas) {
         return new Profesor(nombre, "Calle 1", "3000000000", LocalDate.of(1985, 4, 2),
                 cedula, "Sociales", valorHora, horas);
