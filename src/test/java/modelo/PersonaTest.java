@@ -19,4 +19,10 @@ public class PersonaTest {
         assertEquals(15, persona.calcularEdad(LocalDate.of(2026, 8, 19)));
         assertEquals(16, persona.calcularEdad(LocalDate.of(2026, 8, 20)));
     }
+
+    @Test
+    public void testEdadEsCeroSinFechaDeNacimiento() {
+        Persona persona = new Estudiante();
+        assertEquals(0, persona.calcularEdad());
+    }
 }
