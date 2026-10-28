@@ -43,4 +43,11 @@ public class ControladorColegioTest {
         assertTrue(error.getMessage().contains("nombre"));
         assertTrue(colegio.getEstudiantes().isEmpty());
     }
+
+    @Test
+    public void testFechaQueNoExisteDaError() {
+        // El 31 de febrero no existe
+        assertThrows(IllegalArgumentException.class,
+                () -> controlador.registrarEstudiante("Sofía", "Calle 8", "320", "31/02/2013", "E10", "6A"));
+    }
 }
