@@ -66,4 +66,13 @@ public class ControladorColegioTest {
                         "2001", "Música", "15000", "40"));
         assertTrue(colegio.getProfesores().isEmpty());
     }
+
+    @Test
+    public void testHorasConLetrasDaError() {
+        IllegalArgumentException error = assertThrows(IllegalArgumentException.class,
+                () -> controlador.registrarProfesor("Pablo", "Calle 3", "310", "01/01/1990",
+                        "2001", "Música", "15000", "cuarenta"));
+
+        assertTrue(error.getMessage().contains("horas"));
+    }
 }
