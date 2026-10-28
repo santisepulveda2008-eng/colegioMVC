@@ -50,4 +50,11 @@ public class ControladorColegioTest {
         assertThrows(IllegalArgumentException.class,
                 () -> controlador.registrarEstudiante("Sofía", "Calle 8", "320", "31/02/2013", "E10", "6A"));
     }
+
+    @Test
+    public void testFechaFuturaDaError() {
+        // Hoy es 28/10/2026, así que el día siguiente ya es futuro
+        assertThrows(IllegalArgumentException.class,
+                () -> controlador.registrarEstudiante("Sofía", "Calle 8", "320", "29/10/2026", "E10", "6A"));
+    }
 }
