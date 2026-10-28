@@ -57,4 +57,13 @@ public class ControladorColegioTest {
         assertThrows(IllegalArgumentException.class,
                 () -> controlador.registrarEstudiante("Sofía", "Calle 8", "320", "29/10/2026", "E10", "6A"));
     }
+
+    @Test
+    public void testProfesorMenorDeEdadDaError() {
+        // Nacido en 2010: en 2026 tiene 16 años
+        assertThrows(IllegalArgumentException.class,
+                () -> controlador.registrarProfesor("Pablo", "Calle 3", "310", "01/01/2010",
+                        "2001", "Música", "15000", "40"));
+        assertTrue(colegio.getProfesores().isEmpty());
+    }
 }
