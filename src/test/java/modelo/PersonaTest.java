@@ -25,4 +25,13 @@ public class PersonaTest {
         Persona persona = new Estudiante();
         assertEquals(0, persona.calcularEdad());
     }
+
+    @Test
+    public void testMayorDeEdadDesdeLosDieciocho() {
+        Persona persona = new Estudiante();
+        persona.setFechaNacimiento(LocalDate.of(2008, 3, 10));
+
+        assertFalse(persona.esMayorDeEdad(LocalDate.of(2026, 3, 9)));
+        assertTrue(persona.esMayorDeEdad(LocalDate.of(2026, 3, 10)));
+    }
 }
