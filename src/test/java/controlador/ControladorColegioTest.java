@@ -34,4 +34,13 @@ public class ControladorColegioTest {
         assertEquals(LocalDate.of(2013, 9, 5), e.getFechaNacimiento());
         assertEquals(1, colegio.getEstudiantes().size());
     }
+
+    @Test
+    public void testCampoVacioDaError() {
+        IllegalArgumentException error = assertThrows(IllegalArgumentException.class,
+                () -> controlador.registrarEstudiante("", "Calle 8", "3204445566", "05/09/2013", "E10", "6A"));
+
+        assertTrue(error.getMessage().contains("nombre"));
+        assertTrue(colegio.getEstudiantes().isEmpty());
+    }
 }
