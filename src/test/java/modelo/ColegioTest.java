@@ -1,6 +1,7 @@
 package modelo;
 
 import java.time.LocalDate;
+import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -37,5 +38,24 @@ public class ColegioTest {
         assertThrows(IllegalArgumentException.class,
                 () -> colegio.registrarEstudiante(crearEstudiante("E01")));
         assertEquals(1, colegio.getEstudiantes().size());
+    }
+
+    @Test
+    public void testProfesoresOrdenadosDeMayorAMenorPago() {
+        // Se registran en desorden a propósito
+        colegio.registrarProfesor(crearProfesor("Carlos", "3", 10000, 40));
+        colegio.registrarProfesor(crearProfesor("Ana", "1", 20000, 80));
+        colegio.registrarProfesor(crearProfesor("Beatriz", "2", 15000, 60));
+
+        List<Profesor> ordenados = colegio.profesoresPorPago();
+
+        assertEquals("Ana", ordenados.get(0).getNombre());
+        assertEquals("Beatriz", ordenados.get(1).getNombre());
+        assertEquals("Carlos", ordenados.get(2).getNombre());
+    }
+
+    private Profesor crearProfesor(String nombre, String cedula, double valorHora, int horas) {
+        return new Profesor(nombre, "Calle 1", "3000000000", LocalDate.of(1985, 4, 2),
+                cedula, "Sociales", valorHora, horas);
     }
 }
