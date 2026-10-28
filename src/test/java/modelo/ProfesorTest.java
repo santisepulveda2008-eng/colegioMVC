@@ -31,4 +31,10 @@ public class ProfesorTest {
         // Sobrecarga: 10.000 x 50 = 500.000 + 30% = 650.000
         assertEquals(650000, profesor.calcularPago(50), 0.01);
     }
+
+    @Test
+    public void testPrestacionesSonDiecinuevePorCiento() {
+        // 19% de 1.300.000 = 247.000
+        assertEquals(247000, profesor.calcularPrestaciones(), 0.01);
+    }
 }
