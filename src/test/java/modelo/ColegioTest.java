@@ -54,6 +54,15 @@ public class ColegioTest {
         assertEquals("Carlos", ordenados.get(2).getNombre());
     }
 
+    @Test
+    public void testTotalDePrestaciones() {
+        // Cada uno gana 1.300.000, así que cada uno tiene 247.000 de prestaciones
+        colegio.registrarProfesor(crearProfesor("Ana", "1", 10000, 100));
+        colegio.registrarProfesor(crearProfesor("Beatriz", "2", 20000, 50));
+
+        assertEquals(494000, colegio.calcularTotalPrestaciones(), 0.01);
+    }
+
     private Profesor crearProfesor(String nombre, String cedula, double valorHora, int horas) {
         return new Profesor(nombre, "Calle 1", "3000000000", LocalDate.of(1985, 4, 2),
                 cedula, "Sociales", valorHora, horas);
