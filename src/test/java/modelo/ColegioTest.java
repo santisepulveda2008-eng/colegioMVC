@@ -29,4 +29,13 @@ public class ColegioTest {
         assertEquals(1, colegio.getEstudiantes().size());
         assertNotNull(colegio.buscarEstudiante("E01"));
     }
+
+    @Test
+    public void testNoPermiteCodigoRepetido() {
+        colegio.registrarEstudiante(crearEstudiante("E01"));
+
+        assertThrows(IllegalArgumentException.class,
+                () -> colegio.registrarEstudiante(crearEstudiante("E01")));
+        assertEquals(1, colegio.getEstudiantes().size());
+    }
 }
