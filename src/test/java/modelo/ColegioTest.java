@@ -63,6 +63,12 @@ public class ColegioTest {
         assertEquals(494000, colegio.calcularTotalPrestaciones(), 0.01);
     }
 
+    @Test
+    public void testReporteVacioMuestraMensaje() {
+        assertTrue(colegio.generarReporteEstudiantes().contains("no hay estudiantes"));
+        assertTrue(colegio.generarReporteProfesores().contains("no hay profesores"));
+    }
+
     private Profesor crearProfesor(String nombre, String cedula, double valorHora, int horas) {
         return new Profesor(nombre, "Calle 1", "3000000000", LocalDate.of(1985, 4, 2),
                 cedula, "Sociales", valorHora, horas);
