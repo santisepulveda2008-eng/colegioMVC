@@ -75,4 +75,11 @@ public class ControladorColegioTest {
 
         assertTrue(error.getMessage().contains("horas"));
     }
+
+    @Test
+    public void testValorHoraEnCeroDaError() {
+        assertThrows(IllegalArgumentException.class,
+                () -> controlador.registrarProfesor("Pablo", "Calle 3", "310", "01/01/1990",
+                        "2001", "Música", "0", "40"));
+    }
 }
